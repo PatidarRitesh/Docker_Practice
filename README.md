@@ -1,7 +1,6 @@
 # Docker_Experiments
 This Repository is for learning Docker from beginner to advance
 
-
 ## Docker Installation
 - [Docker Installation](https://docs.docker.com/engine/install/)
 
@@ -131,4 +130,12 @@ docker network disconnect <network_name> <container_name>
 ```
 docker run -d --name <container_name> --network <network_name> <image_name>
 ```
+
+## Docker Commands for checking container IP
+
+```
+docker inspect <container_name> | grep "IPAddress"
+```
+
+
 
