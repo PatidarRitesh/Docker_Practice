@@ -137,5 +137,37 @@ docker run -d --name <container_name> --network <network_name> <image_name>
 docker inspect <container_name> | grep "IPAddress"
 ```
 
+## Docker with multiple containers
 
+### Here I have used MySQL as a database and Python code to connect with MySQL database as a another container
 
+### Steps to run the code
+
+### First Run the MySQL container
+
+```
+docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=<database_name> --network <network_name> mysql
+```
+
+### Then Run the Python container
+
+``` 
+docker build -t <image_name> .
+docker run -d --name <container_name> --network <network_name> <image_name>
+```
+
+### Port Mapping
+
+```
+docker run -d --name <container_name> -p <host_port>:<container_port> <image_name>
+```
+
+### Volume Mapping
+
+```
+docker run -d --name <container_name> -v <host_path>:<container_path> <image_name>
+```
+
+### Docker Compose
+
+### Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application's services. Then, with a single command, you create and start all the services from your configuration.
